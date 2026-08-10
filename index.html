@@ -8,9 +8,11 @@
 </head>
 <body>
 
-<button id="burger" class="burger" aria-label="Menü öffnen">
-  <span></span><span></span><span></span>
-</button>
+<div id="mini-logo" class="mini-logo">
+  <div class="mini-logo-crop"></div>
+</div>
+
+<button id="burger" class="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
 
 <nav id="sidebar" class="sidebar">
   <button id="close-btn" class="close-btn" aria-label="Menü schließen">&times;</button>
@@ -26,9 +28,8 @@
 <div id="overlay" class="overlay"></div>
 
 <main>
-  <div class="hero-bg"></div>
-  <section class="hero">
-    <a href="#about" class="scroll-hint">↓ Scroll für mehr</a>
+  <section class="hero" id="hero">
+    <button id="scroll-hint" class="scroll-hint">↓ Mehr entdecken</button>
   </section>
 
   <section class="about" id="about">
@@ -38,6 +39,7 @@
       <p>Wir stehen für hochwertige Fahrzeugpflege mit Liebe zum Detail. Unser Ziel ist es, jedes Fahrzeug nicht einfach nur sauber zu machen, sondern ihm wieder ein gepflegtes und frisches Erscheinungsbild zu verleihen.</p>
       <p>Von der gründlichen Innenreinigung über die professionelle Außenpflege bis hin zur Politur bieten wir individuelle Aufbereitungslösungen für Pkw, Transporter und Wohnmobile.</p>
       <p>Dabei legen wir besonderen Wert auf saubere Arbeit, hochwertige Produkte und ein Ergebnis, das sich sehen lassen kann.</p>
+      <button id="services-link" class="services-link">Unsere Leistungen</button>
     </div>
   </section>
 </main>
