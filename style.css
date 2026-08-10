@@ -27,7 +27,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 110px;
+  height: 90px;
   overflow: hidden;
   z-index: 150;
   opacity: 0;
@@ -157,7 +157,7 @@ body {
 }
 
 .about {
-  padding: 70px 0 100px;
+  padding: 140px 0 100px;
   text-align: center;
   background: var(--bg);
 }
@@ -251,4 +251,9 @@ body {
 
 @media (max-width: 600px) {
   .detail-page h1 { font-size: 1.8rem; }
+@media (max-width: 700px) {
+  .hero {
+    background-size: 100% auto;
+    background-position: center top;
+  }
 }
