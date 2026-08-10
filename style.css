@@ -1,10 +1,10 @@
 :root {
-  --bg: #f4f4f5;
-  --surface: #ffffff
-  --border: #e0e0e2;
+  --bg: #c7c8ca;
+  --surface: #e4e5e7;
+  --border: #b3b4b7;
   --text: #1c1c1e;
-  --muted: #6b6b70;
-  --accent: #3a3a3d;
+  --muted: #4a4a4d;
+  --accent: #1c1c1e;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -22,7 +22,7 @@ body {
   top: 24px;
   left: 24px;
   z-index: 200;
-  background: var(--surface);
+  background: #f0f0f1;
   border: 1px solid var(--border);
   border-radius: 12px;
   width: 46px;
@@ -50,7 +50,7 @@ body {
   left: -300px;
   width: 280px;
   height: 100%;
-  background: var(--surface);
+  background: #f0f0f1;
   border-right: 1px solid var(--border);
   padding: 80px 28px 28px;
   transition: left 0.35s cubic-bezier(.4,0,.2,1);
@@ -97,20 +97,40 @@ body {
 .overlay.active { display: block; }
 
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px 20px;
+  padding: 0 20px;
+  background: linear-gradient(180deg, #d4d5d7 0%, #c7c8ca 60%, #b8b9bc 100%);
 }
-.hero-logo { max-width: 280px; width: 70%; margin-bottom: 20px; }
-.tagline { color: var(--muted); font-size: 1.1rem; letter-spacing: 0.02em; }
+.hero-logo { 
+  max-width: 640px;
+  width: 92%;
+  margin-bottom: 0;
+}
+.scroll-hint {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
 
-.about { padding: 100px 0; text-align: center; }
-.about h2 { font-size: 1.8rem; margin-bottom: 24px; font-weight: 600; }
-.about p { color: var(--muted); margin_bottom: 16px; max-width: 620px; margin-left: auto; margin-right: auto}
+.about {
+  padding: 60px 0 100px;
+  text-align: center;
+  background: var(--bg);
+}
+.about h2 { font-size: 1.8rem; margin-bottom: 20px; font-weight: 700; }
+.about p { color: var(--muted); margin_bottom: 14px; max-width: 620px; margin-left: auto; margin-right: auto}
 
 .detail-page { padding: 120px 0 100px; }
 .back-link { display: inline-block; margin-bottom: 32px; color: var(--muted); text-decoration: none; font-size: 0.9rem; }
@@ -129,7 +149,7 @@ body {
 .service-list li strong { display: block; margin-bottom: 4px; }
 
 .extra-box {
-  background: var(--surface);
+  background: #f0f0f1;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 24px;
