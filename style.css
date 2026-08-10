@@ -1,0 +1,23 @@
+.package-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.package-card h2 {
+  text-align: left;
+  front-size: 1.4rem;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.package-card h2 .price {
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+.package-intro { color: var(--gray); margin-bottom: 8px; font-style: italic; }
+.about p { max.width: 650px; margin: 0 auto 16px; color: var(--gray); }
