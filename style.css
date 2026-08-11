@@ -35,7 +35,7 @@ body {
   pointer-events: none;
   margin: 0;
   padding: 0;
-  background: var(--bg);
+  background: #c9cacc;
 }
 .mini-logo.visible { opacity: 1; }
 .mini-logo-crop {
