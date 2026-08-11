@@ -200,7 +200,7 @@ body {
 .service-list li strong { display: block; margin-bottom: 4px; }
 
 .extra-box {
-  background: var(--surface);
+  background: #e4e5e7;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 24px;
@@ -259,5 +259,17 @@ body {
   .hero {
     background-size: 100% auto;
     background-position: center top;
+.plus-page .detail-page h1 { color: #2b2b2e; }
+.premium-page .detail-page h1 {
+  color: #0d0d0e;
+  text-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+.premium-page .price-tag {
+  background: linear-gradient(90deg, #1c1c1e, #4a4a4d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
   }
 }
