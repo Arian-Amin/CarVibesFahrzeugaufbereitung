@@ -363,7 +363,7 @@ body {
   text-decoration: underline;
   font-weight: 600;
 }
-.inline-link.hover { color. var(--muted); }
+.inline-link:hover { color. var(--muted); }
 
 .sidebar a.active {
   background: #c3c4c6;
