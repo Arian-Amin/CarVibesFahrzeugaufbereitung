@@ -1,37 +1,88 @@
-<section class="detail-page">
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt | CarVibes</title>
+<link rel="stylesheet" href="style.css?v=7">
+</head>
+<body>
+
+<button id="burger" class="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+
+<nav id="sidebar" class="sidebar">
+  <button id="close-btn" class="close-btn" aria-label="Menü schließen">&times;</button>
+  <h3>Unsere Leistungen</h3>
+  <a href="premium.html">Premium Paket <span class="popular-tag">Beliebt</span></a>
+  <a href="plus.html">Plus Paket</a>
+  <a href="basic.html">Basic Paket</a>
+  <a href="aussenreinigung.html">Außenreinigung</a>
+  <a href="innenreinigung.html">Innenreinigung</a>
+  <a href="extras.html">Extras</a>
+</nav>
+
+<div id="overlay" class="overlay"></div>
+
+<main class="detail-page">
   <div class="container">
-    <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+    <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
     <h1>Kontakt</h1>
-    <p class="intro">Schreib uns eine Nachricht, wir melden uns schnellstmöglich zurück.</p>
+    <p class="intro">Haben Sie Fragen oder möchten Sie direkt einen Termin vereinbaren? Wir freuen uns auf Ihre Nachricht.</p>
+    <p>Telefon: 01234 / 567890<br>
+    E-Mail: info@carvibes-remagen.de</p>
+    <p>CarVibes Autoaufbereitung<br>
+    Musterstraße 1<br>
+    53424 Remagen</p>
 
-    <form action="https://formspree.io/f/DEIN-CODE-HIER" method="POST" class="contact-form">
-      <label for="email">Deine E-Mail-Adresse *</label>
-      <input type="email" id="email" name="email" required>
+    <div class="extra-box contact-box">
+      <form action="https://formspree.io/f/DEIN-CODE-HIER" method="POST" class="contact-form">
+        <label for="email">Ihre E-Mail-Adresse *</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="service">Welche Dienstleistung interessiert dich? *</label>
-      <select id="service" name="service" required>
-        <option value="">Bitte wählen</option>
-        <option value="Basic Paket">Basic Paket</option>
-        <option value="Plus Paket">Plus Paket</option>
-        <option value="Premium Paket">Premium Paket</option>
-        <option value="Außenreinigung">Außenreinigung</option>
-        <option value="Innenreinigung">Innenreinigung</option>
-        <option value="Extras">Extras</option>
-        <option value="Sonstiges">Sonstiges / weiß noch nicht</option>
-      </select>
+        <label for="service">Betreff / Dienstleistung *</label>
+        <select id="service" name="service" required>
+          <option value="">Bitte wählen</option>
+          <option value="Basic Paket">Basic Paket</option>
+          <option value="Plus Paket">Plus Paket</option>
+          <option value="Premium Paket">Premium Paket</option>
+          <option value="Außenreinigung">Außenreinigung</option>
+          <option value="Innenreinigung">Innenreinigung</option>
+          <option value="Extras">Extras</option>
+          <option value="Sonstiges">Sonstiges</option>
+        </select>
 
-      <label for="message">Deine Nachricht *</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="message">Ihre Nachricht *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-      <label for="termin">Wunschtermin (optional)</label>
-      <input type="text" id="termin" name="wunschtermin" placeholder="z. B. nächste Woche Dienstag oder Mittwoch">
+        <label for="termin">Wunschtermin (optional)</label>
+        <input type="date" id="termin" name="wunschtermin">
 
-      <div class="privacy-check">
-        <input type="checkbox" id="privacy" name="privacy" required>
-        <label for="privacy">Ich habe die <a href="datenschutz.html" class="inline-link">Datenschutzerklärung</a> gelesen und bin einverstanden. *</label>
-      </div>
+        <div class="form-bottom-row">
+          <button type="submit" class="btn">Nachricht senden</button>
+          <div class="privacy-check">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy">Ich habe die <a href="datenschutz.html" class="inline-link">Datenschutzerklärung</a> gelesen. *</label>
+          </div>
+        </div>
+      </form>
+    </div>
 
-      <button type="submit" class="btn">Nachricht senden</button>
-    </form>
+    <div class="social-row">
+      <a href="https://instagram.com/EUER-NAME" target="_blank" rel="noopener"><img src="instagram-icon.png" alt="Instagram" class="social-icon"></a>
+      <a href="https://facebook.com/EUER-NAME" target="_blank" rel="noopener"><img src="facebook-icon.png" alt="Facebook" class="social-icon"></a>
+      <a href="https://wa.me/49XXXXXXXXXX" target="_blank" rel="noopener"><img src="whatsapp-icon.png" alt="WhatsApp" class="social-icon"></a>
+    </div>
+
   </div>
-</section>
+</main>
+
+<footer class="footer">
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
+  <a href="kontakt.html">Kontakt</a>
+  <span class="copyright">&copy; 2026 CarVibes Autoaufbereitung, Remagen</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
