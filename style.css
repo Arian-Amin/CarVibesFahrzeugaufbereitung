@@ -146,7 +146,7 @@ body {
   max-height: 750px;
   min-height: 400px;
   background-color: var(--bg);
-  background-image: url('logo-desktop.png');
+  background-image: url('logo-desktoph.png');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -365,7 +365,7 @@ body {
   .hero {
     height: 60vh;
     min-height: 350px;
-    background-image: url('logo-mobile.png')
+    background-image: url('logo-mobileh.png')
   }
 }
 
