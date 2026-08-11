@@ -141,13 +141,14 @@ body {
 .overlay.active { display: block; }
 
 .hero {
-  aspect-ratio: 16 / 9;
   width: 100%;
-  height: auto;
+  height: 70vh;
+  max-height: 650px;
   min-height: 400px;
+  background-color: var(--bg);
   background-image: url('logo.png');
-  background-size: cover;
-  background-position: center top;
+  background-size: contain;
+  background-position: center center;
   background-repeat: no-repeat;
   display: flex;
   align-items: flex-end;
@@ -272,8 +273,8 @@ body {
 }
 @media (max-width: 700px) {
   .hero {
-    background-size: cover;
-    background-position: center top;
+    height: 60vh;
+    min-height: 350px;
   }
 }
 .plus-page .detail-page h1 { color: #2b2b2e; }
