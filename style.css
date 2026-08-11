@@ -146,8 +146,8 @@ body {
   max-height: 650px;
   min-height: 400px;
   background-color: var(--bg);
-  background-image: url('logo.png');
-  background-size: contain;
+  background-image: url('logoneu.png');
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   display: flex;
@@ -356,6 +356,12 @@ body {
 
 @media (max-width: 500px) {
   .form-bottom-row { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 700px) {
+  .hero {
+    height: 60vh;
+    min-height: 350px;
+  }
 }
 
 .inline-link {
