@@ -1,47 +1,38 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontakt | CarVibes</title>
-<link rel="stylesheet" href="style.css?v=6">
-</head>
-<body>
-
-<button id="burger" class="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
-
-<nav id="sidebar" class="sidebar">
-  <button id="close-btn" class="close-btn" aria-label="Menü schließen">&times;</button>
-  <h3>Unsere Leistungen</h3>
-  <a href="aussenreinigung.html">Außenreinigung</a>
-  <a href="innenreinigung.html">Innenreinigung</a>
-  <a href="extras.html">Extras</a>
-  <a href="basic.html">Basic Paket</a>
-  <a href="plus.html">Plus Paket</a>
-  <a href="premium.html">Premium Paket</a>
-</nav>
-
-<div id="overlay" class="overlay"></div>
-
-<main class="detail-page">
+<section class="detail-page">
   <div class="container">
-    <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
+    <a href="index.html" class="back-link">← Zurück zur Startseite</a>
     <h1>Kontakt</h1>
-    <p class="intro">Haben Sie Fragen oder möchten Sie direkt einen Termin vereinbaren? Wir freuen uns auf Ihre Nachricht.</p>
-    <p>Telefon: 01234 / 567890<br>
-    E-Mail: info@carvibes-remagen.de</p>
-    <p>CarVibes Autoaufbereitung<br>
-    Musterstraße 1<br>
-    53424 Remagen</p>
+    <p class="intro">Schreib uns eine Nachricht, wir melden uns schnellstmöglich zurück.</p>
+
+    <form action="https://formspree.io/f/mgawkzbr" method="POST" class="contact-form">
+      
+      <label for="email">Deine E-Mail-Adresse *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="service">Welche Dienstleistung interessiert dich? *</label>
+      <select id="service" name="service" required>
+        <option value="">Bitte wählen</option>
+        <option value="Basic Paket">Basic Paket</option>
+        <option value="Plus Paket">Plus Paket</option>
+        <option value="Premium Paket">Premium Paket</option>
+        <option value="Außenreinigung">Außenreinigung</option>
+        <option value="Innenreinigung">Innenreinigung</option>
+        <option value="Extras">Extras</option>
+        <option value="Sonstiges">Sonstiges / weiß noch nicht</option>
+      </select>
+
+      <label for="message">Deine Nachricht *</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <label for="termin">Wunschtermin (optional)</label>
+      <input type="text" id="termin" name="wunschtermin" placeholder="z. B. nächste Woche Dienstag oder Mittwoch">
+
+      <div class="privacy-check">
+        <input type="checkbox" id="privacy" name="privacy" required>
+        <label for="privacy">Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und bin einverstanden. *</label>
+      </div>
+
+      <button type="submit" class="btn">Nachricht senden</button>
+    </form>
   </div>
-</main>
-
-<footer class="footer">
-  <a href="impressum.html">Impressum</a>
-  <a href="kontakt.html">Kontakt</a>
-  <span class="copyright">&copy; 2026 CarVibes Autoaufbereitung, Remagen</span>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+</section>
