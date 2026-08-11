@@ -286,4 +286,37 @@ body {
   color: transparent;
   font-weight: 700;
 }
+
+.contact-form {
+  diplay: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 500px;
+}
+.contact-form label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+}
+.privacy-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.privacy-check a { color: var(--text); }
+.contact-form button { margin-top: 20px; align-self: flex-start; }
   
