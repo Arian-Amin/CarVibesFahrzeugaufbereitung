@@ -148,7 +148,7 @@ body {
   background-color: var(--bg);
   background-image: url('logo-desktop.png');
   background-size: cover;
-  background-position: center 80%;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   align-items: flex-end;
