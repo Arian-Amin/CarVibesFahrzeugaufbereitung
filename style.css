@@ -254,6 +254,7 @@ body {
 
 @media (max-width: 600px) {
   .detail-page h1 { font-size: 1.8rem; }
+}
 @media (max-width: 700px) {
   .hero {
     background-size: 100% auto;
