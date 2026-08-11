@@ -259,6 +259,8 @@ body {
   .hero {
     background-size: 100% auto;
     background-position: center top;
+  }
+}
 .plus-page .detail-page h1 { color: #2b2b2e; }
 .premium-page .detail-page h1 {
   color: #0d0d0e;
@@ -271,5 +273,4 @@ body {
   color: transparent;
   font-weight: 700;
 }
-  }
-}
+  
