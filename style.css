@@ -361,4 +361,21 @@ body {
   font-weight: 600;
 }
 .inline-link.hover { color. var(--muted); }
+
+.sidebar a.active {
+  background: #c3c4c6;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.page-aussenreinigung .sidebar a[href="aussenreinigung.html"],
+.page-innenreinigung .sidebar a[href="innenreinigung.html"],
+.page-extras .sidebar a[href="extras.html"]
+.page-basic .sidebar a[href="basic.html"]
+.page-plus .sidebar a[href="plus.html"]
+.page-premium .sidebar a[href="premium.html"] {
+  background: #c3c4c6;
+  color: var(--accent);
+  font-weight: 700;
+}
   
