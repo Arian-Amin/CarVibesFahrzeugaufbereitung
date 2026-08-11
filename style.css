@@ -257,7 +257,7 @@ body {
 }
 @media (max-width: 700px) {
   .hero {
-    background-size: 100% auto;
+    background-size: cover;
     background-position: center top;
   }
 }
