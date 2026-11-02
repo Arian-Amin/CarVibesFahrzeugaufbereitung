@@ -61,52 +61,80 @@ window.addEventListener('resize', updateScrollHeader);
 
 updateScrollHeader();
 
-/* Video starten und Steuerung bei laufender Wiedergabe ausblenden */
+/* Video ohne Standard-Steuerleiste */
 const aboutVideoPlayer =
   document.getElementById('about-video-player');
 
-if (aboutVideoPlayer) {
+const videoPlayButton =
+  document.getElementById('video-play-button');
+
+const videoErrorMessage =
+  document.getElementById('video-error-message');
+
+if (aboutVideoPlayer && videoPlayButton && videoErrorMessage) {
+  let startPending = false;
+
+  aboutVideoPlayer.controls = false;
   aboutVideoPlayer.muted = true;
   aboutVideoPlayer.defaultMuted = true;
 
-  let startPending = false;
+  function showVideoError() {
+    videoPlayButton.hidden = true;
+    videoErrorMessage.hidden = false;
+  }
 
-  function tryStartAboutVideo() {
-    if (!aboutVideoPlayer.paused || startPending) return;
+  async function startAboutVideo() {
+    if (!aboutVideoPlayer.paused) {
+      videoPlayButton.hidden = true;
+      return;
+    }
+
+    if (startPending) return;
 
     startPending = true;
+    videoErrorMessage.hidden = true;
 
-    const playAttempt = aboutVideoPlayer.play();
-
-    if (playAttempt !== undefined) {
-      playAttempt
-        .catch(() => {
-          aboutVideoPlayer.controls = true;
-        })
-        .finally(() => {
-          startPending = false;
-        });
-    } else {
+    try {
+      await aboutVideoPlayer.play();
+      videoPlayButton.hidden = true;
+    } catch (error) {
+      if (!aboutVideoPlayer.paused) {
+        videoPlayButton.hidden = true;
+      } else if (error.name === 'NotAllowedError') {
+        videoPlayButton.hidden = false;
+      } else if (error.name !== 'AbortError') {
+        showVideoError();
+      }
+    } finally {
       startPending = false;
     }
   }
 
   aboutVideoPlayer.addEventListener('playing', () => {
-    aboutVideoPlayer.controls = false;
+    videoPlayButton.hidden = true;
+    videoErrorMessage.hidden = true;
   });
 
   aboutVideoPlayer.addEventListener('pause', () => {
-    aboutVideoPlayer.controls = true;
+    if (!aboutVideoPlayer.error) {
+      videoPlayButton.hidden = false;
+    }
   });
 
-  aboutVideoPlayer.addEventListener('error', () => {
-    aboutVideoPlayer.controls = true;
-  });
+  aboutVideoPlayer.addEventListener('error', showVideoError);
+
+  const videoSource = aboutVideoPlayer.querySelector('source');
+
+  if (videoSource) {
+    videoSource.addEventListener('error', showVideoError);
+  }
+
+  videoPlayButton.addEventListener('click', startAboutVideo);
 
   const videoObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        tryStartAboutVideo();
+      if (entry.isIntersecting && videoPlayButton.hidden) {
+        startAboutVideo();
       }
     });
   }, {
@@ -114,8 +142,4 @@ if (aboutVideoPlayer) {
   });
 
   videoObserver.observe(aboutVideoPlayer);
-
-  if (!aboutVideoPlayer.paused) {
-    aboutVideoPlayer.controls = false;
-  }
 }
