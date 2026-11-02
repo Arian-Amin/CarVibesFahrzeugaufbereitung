@@ -409,16 +409,58 @@ body {
 
 @media (min-width: 1100px) {
   .about-inner {
-    max-widht: 1300px;
+    /* Text und Video: Handy und schmale Fenster */
+.about-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-text,
+.about-video {
+  min-width: 0;
+  width: 100%;
+}
+
+.about-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Text und Video: breite Fenster */
+@media (min-width: 1100px) {
+  .about-inner {
+    max-width: 1300px;
     flex-direction: row;
     align-items: center;
-    gap: 60ßx;
+    gap: 60px;
   }
-  .about-text { flex: 1; text-align: left; }
-  .about-text p { margin-left: 0; margin-right: 0; }
-  .about-text .social-row-center { justify-content: flex-start; }
-  .about-video { flex: 1; }
-/* Scroll-Logo auf schmalen Bildschirmen */
+
+  .about-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  .about-text p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .about-text .social-row-center {
+    justify-content: flex-start;
+  }
+
+  .about-video {
+    flex: 1;
+  }
+}
+
+/* Scroll-Logo: Handy und schmale Fenster */
 @media (max-width: 700px) {
   .mini-logo {
     height: 90px;
@@ -434,4 +476,3 @@ body {
     margin-left: 80px;
   }
 }
-  
