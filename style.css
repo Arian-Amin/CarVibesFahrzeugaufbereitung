@@ -418,5 +418,20 @@ body {
   .about-text p { margin-left: 0; margin-right: 0; }
   .about-text .social-row-center { justify-content: flex-start; }
   .about-video { flex: 1; }
+/* Scroll-Logo auf schmalen Bildschirmen */
+@media (max-width: 700px) {
+  .mini-logo {
+    height: 90px;
+  }
+
+  .mini-logo-crop {
+    background-image: url('logo-mini-mobile.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: calc(100% - 100px);
+    height: 100%;
+    margin-left: 80px;
+  }
 }
   
