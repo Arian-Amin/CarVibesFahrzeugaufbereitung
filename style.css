@@ -476,49 +476,84 @@ body {
   position: relative;
 }
 
-.video-play-button {
+/* Play-Button: weißes Dreieck ohne Kreis */
+#video-play-button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 112px;
-  height: 120px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 112px;
+  height: 120px;
+  margin: 0;
   padding: 0;
-  border: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: 0;
   border-radius: 0;
-  background: transparent;
+  background: none;
+  box-shadow: none;
+  outline: none;
+
   color: #fff;
   cursor: pointer;
   z-index: 1;
-  appearance: none;
-  -webkit-appearance: none;
+
   -webkit-tap-highlight-color: transparent;
 }
 
-.video-play-button svg {
+#video-play-button:hover,
+#video-play-button:active,
+#video-play-button:focus {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+#video-play-button::before,
+#video-play-button::after {
+  content: none;
+  display: none;
+}
+
+#video-play-button svg {
   display: block;
   width: 88px;
   height: 100px;
   margin: 0;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45));
+  padding: 0;
+
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  filter: none;
+
   transition: transform 0.2s ease;
 }
 
-.video-play-button:hover {
-  background: transparent;
+#video-play-button:hover svg {
+  transform: scale(1.06);
 }
 
-.video-play-button:hover svg {
-  transform: scale(1.08);
+/* Fokusmarkierung nur bei Tastaturbedienung */
+#video-play-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
 }
 
-.video-play-button:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 6px;
+#video-play-button[hidden] {
+  display: none;
 }
+
+
 
 
 .video-play-button[hidden],
