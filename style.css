@@ -395,7 +395,8 @@ body {
   text-decoration: underline;
   font-weight: 600;
 }
-.inline-link:hover { color. var(--muted); }
+.inline-link:hover { color: var(--muted); }
+
 
 .sidebar a.active {
   background: #c3c4c6;
@@ -414,56 +415,47 @@ body {
   font-weight: 700;
 }
 
+/* Handy und schmale Fenster: Video unter dem Text */
 .about-inner {
   max-width: 780px;
   margin: 0 auto;
   padding: 0 24px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 40px;
-}
-.about-video video {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-}
-
-@media (min-width: 1100px) {
-  .about-inner {
-    /* Text und Video: Handy und schmale Fenster */
-.about-inner {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  align-items: center;
 }
 
 .about-text,
 .about-video {
   min-width: 0;
+}
+
+.about-video {
   width: 100%;
+  max-width: 420px;
+  justify-self: center;
 }
 
 .about-video video {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #1c1c1e;
   border-radius: 16px;
 }
 
-/* Text und Video: breite Fenster */
+/* Breite Fenster: Text links und Video rechts */
 @media (min-width: 1100px) {
   .about-inner {
     max-width: 1300px;
-    flex-direction: row;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 60px;
   }
 
   .about-text {
-    flex: 1;
     text-align: left;
   }
 
@@ -475,13 +467,9 @@ body {
   .about-text .social-row-center {
     justify-content: flex-start;
   }
-
-  .about-video {
-    flex: 1;
-  }
 }
 
-/* Scroll-Logo: Handy und schmale Fenster */
+/* Handy: neuer Schriftzug beim Herunterscrollen */
 @media (max-width: 700px) {
   .mini-logo {
     height: 90px;
